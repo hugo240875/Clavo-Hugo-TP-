@@ -1,0 +1,147 @@
+/* Style global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    /* Fond en dégradé sombre */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Conteneur principal (zone centrale) */
+main {
+    background-color: rgba(255, 255, 255, 0.179);
+    padding: 30px;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* En-tête et titres */
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2268d8;
+}
+
+/* Éléments du formulaire */
+label {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #a1c4fd7b;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #00adb5;
+    border-radius: 6px;
+    background-color: #1f2933;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    color: #1f2933;
+    background-color: #0abc9e;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #232155;
+    transform: translateY(-3px);
+}
+
+/* Résultat affiché avec une animation simple */
+#resultat {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1ab7bf;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animation d'arrière-plan : carrés animés */
+#animated-squares {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Carrés animés */
+.animated-square {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    opacity: 0.7;
+    animation: moveSquare 12s linear infinite, colorCycle 4s linear infinite;
+}
+
+/* Positionnement initial aléatoire via inline style (ajouter dynamiquement ou via JS) */
+
+/* Animation de déplacement */
+@keyframes moveSquare {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(80vw, 10vh) rotate(90deg);
+    }
+    50% {
+        transform: translate(70vw, 80vh) rotate(180deg);
+    }
+    75% {
+        transform: translate(10vw, 70vh) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+
+/* Pied de page */
+footer {
+    background-color: #1f2933;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
